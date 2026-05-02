@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    "category": "Development",
+    "curriculum": [
+      "HTML & CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Final Project"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sarah Khan",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Master modern UI/UX design principles and prototyping.",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop",
+    "category": "Design",
+    "curriculum": [
+      "Research",
+      "Wireframe",
+      "Prototype",
+      "Typography",
+      "Case Study"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Michael Lee",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn SEO, social media marketing and campaign planning.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    "category": "Marketing",
+    "curriculum": [
+      "SEO",
+      "Content Marketing",
+      "Social Ads",
+      "Analytics",
+      "Campaign Plan"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Advanced React & Next.js",
+    "instructor": "Ayesha Rahman",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Build production-ready apps with React and Next.js.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    "category": "Development",
+    "curriculum": [
+      "React Patterns",
+      "App Router",
+      "Auth",
+      "API Routes",
+      "Deployment"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Graphic Design Essentials",
+    "instructor": "Emma Watson",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn branding, layout, typography and creative design.",
+    "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop",
+    "category": "Design",
+    "curriculum": [
+      "Design Basics",
+      "Branding",
+      "Poster Design",
+      "Social Design",
+      "Final Artwork"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Python for Data Analysis",
+    "instructor": "David Miller",
+    "duration": "16 hours",
+    "rating": 4.4,
+    "level": "Intermediate",
+    "description": "Learn Python, pandas, charts and practical data analysis.",
+    "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1200&auto=format&fit=crop",
+    "category": "Data",
+    "curriculum": [
+      "Python Basics",
+      "Pandas",
+      "Cleaning Data",
+      "Charts",
+      "Data Project"
+    ]
+  }
+]
