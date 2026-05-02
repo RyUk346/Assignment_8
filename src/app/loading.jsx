@@ -1,10 +1,7 @@
-import React from "react";
-
 const LoadingPage = () => {
   return (
-    <div className="flex h-[85vh] items-center justify-center">
-      <h2>Global Loading</h2>
-      <span className="loading loading-dots loading-xl"></span>
+    <div className="h-[80vh] flex justify-center items-center">
+      <span className="loading loading-spinner loading-xl text-primary"></span>
     </div>
   );
 };

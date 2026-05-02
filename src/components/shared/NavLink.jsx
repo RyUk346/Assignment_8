@@ -6,18 +6,19 @@ import React from "react";
 
 const NavLink = ({ href, children }) => {
   const pathname = usePathname();
-  if (!href) return null;
   const isActive = href === pathname;
 
   return (
-    <div>
-      <Link
-        href={href}
-        className={`${isActive ? "bg-purple-500 text-white p-2 rounded-lg" : ""}`}
-      >
-        {children}
-      </Link>
-    </div>
+    <Link
+      href={href}
+      className={`px-3 py-2 rounded-lg font-medium transition ${
+        isActive
+          ? "bg-purple-600 text-white"
+          : "text-gray-700 hover:bg-purple-100 hover:text-purple-700"
+      }`}
+    >
+      {children}
+    </Link>
   );
 };
 
