@@ -5,11 +5,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import {
+  FaBullseye,
+  FaClock,
+  FaTools,
+  FaChartLine,
+  FaSyncAlt,
+  FaComments,
+  FaPenFancy,
+  FaRocket,
+} from "react-icons/fa";
 
 const HomePage = () => {
   const [courses, setCourses] = useState([]);
   const [instructors, setInstructors] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const anim = (delay) => ({
+    initial: { opacity: 0, y: 35 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.2, delay },
+    whileHover: { y: -2, scale: 1.03 },
+  });
 
   useEffect(() => {
     Promise.all([
@@ -42,7 +60,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <section className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white min-h-[85vh] flex items-center justify-center">
+      <section className="bg-linear-to-r from-purple-700 to-indigo-700 text-white min-h-[85vh] flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -93,31 +111,121 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-purple-50 py-14">
+      <section className="bg-purple-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Learning Tips</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-10"
+          >
+            <p className="text-purple-600 font-semibold">Smarter Learning</p>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">
+              Learning Tips for Better Progress
+            </h2>
+            <p className="text-gray-600 mt-4">
+              Build strong habits, stay consistent, and turn learning into
+              real-world skills.
+            </p>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow transition-transform duration-300 hover:scale-105">
-              <h3 className="font-bold text-xl">Plan Your Study</h3>
-              <p className="mt-2 text-gray-600">
-                Set weekly goals and follow a fixed learning routine.
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div
+              {...anim(0.1)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaBullseye className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Set Clear Goals</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Break large topics into smaller weekly targets to stay focused
+                and avoid burnout.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-xl shadow transition-transform duration-300 hover:scale-105">
-              <h3 className="font-bold text-xl">Practice Daily</h3>
-              <p className="mt-2 text-gray-600">
-                Build small projects to understand lessons better.
+            <motion.div
+              {...anim(0.2)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaClock className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Follow a Routine</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Study at a fixed time every day to build discipline and
+                consistency.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-xl shadow transition-transform duration-300 hover:scale-105">
+            <motion.div
+              {...anim(0.3)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaTools className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Practice with Projects</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Apply every concept in small projects instead of only watching
+                tutorials.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...anim(0.4)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaChartLine className="text-3xl text-purple-600 mb-4" />
               <h3 className="font-bold text-xl">Track Progress</h3>
-              <p className="mt-2 text-gray-600">
-                Review your progress and improve weak areas regularly.
+              <p className="mt-3 text-gray-600 text-sm">
+                Monitor completed lessons and weak areas to stay motivated and
+                improve faster.
               </p>
-            </div>
+            </motion.div>
+
+            <motion.div
+              {...anim(0.5)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaSyncAlt className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Review Regularly</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Revisit older topics weekly to strengthen long-term
+                understanding.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...anim(0.6)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaComments className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Ask Questions</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Don’t hesitate to ask when stuck—learning improves through
+                discussion.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...anim(0.7)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaPenFancy className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Take Smart Notes</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Write summaries, key concepts, and mistakes to improve
+                retention.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...anim(0.8)}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all"
+            >
+              <FaRocket className="text-3xl text-purple-600 mb-4" />
+              <h3 className="font-bold text-xl">Build Portfolio Work</h3>
+              <p className="mt-3 text-gray-600 text-sm">
+                Turn your projects into portfolio pieces to showcase your skills
+                professionally.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -164,7 +272,7 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
               >
-                <CourseCard key={course.id} course={course} />
+                <CourseCard course={course} />
               </motion.div>
             ))}
           </div>
