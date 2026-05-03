@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const UpdateProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -35,10 +36,12 @@ const UpdateProfilePage = () => {
 
     if (error) {
       setErrorMessage(error.message || "Update failed");
+      toast.error(error.message || "Update failed");
+
       return;
     }
 
-    alert("Profile updated successfully");
+    toast.success("Profile updated successfully");
     router.push("/my-profile");
   };
 

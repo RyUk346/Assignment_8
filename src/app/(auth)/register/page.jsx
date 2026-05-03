@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -33,10 +34,12 @@ const RegisterPage = () => {
 
     if (error) {
       setErrorMessage(error.message || "Registration failed");
+      toast.error(error.message || "Registration failed");
+
       return;
     }
 
-    alert("Signup Successful");
+    toast.success("Signup Successful");
     router.push("/login");
   };
 

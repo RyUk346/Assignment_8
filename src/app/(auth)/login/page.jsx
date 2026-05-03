@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -33,11 +34,13 @@ const LoginPage = () => {
 
     if (error) {
       setErrorMessage(error.message || "Login failed");
+      toast.error(error.message || "Login failed");
+
       return;
     }
 
-    alert("Login successful");
     router.push(redirectPath);
+    toast.success("Login successful");
   };
 
   const handleGoogleLogin = async () => {
@@ -51,7 +54,7 @@ const LoginPage = () => {
     <div className="min-h-[80vh] flex flex-col justify-center items-center mx-auto px-4">
       <form
         onSubmit={handleSubmit(handleLoginFunc)}
-        className="bg-slate-100 p-8 md:p-12 rounded-xl w-full max-w-md"
+        className="bg-slate-100 p-8 md:p-12 rounded-xl w-full"
       >
         <h2 className="font-semibold text-3xl text-center">
           Login Your Account
@@ -109,7 +112,7 @@ const LoginPage = () => {
       </form>
 
       <p className="mt-4">
-        Don&apos;t have an account?{" "}
+        Don&apos;t have an account?
         <Link href="/register" className="text-blue-500 font-semibold">
           Register
         </Link>
