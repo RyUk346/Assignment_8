@@ -1,17 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const CourseCard = ({ course }) => {
   return (
-    <div className="card bg-base-100 shadow-xl overflow-hidden">
-      <figure>
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.25 }}
+      className="card bg-base-100 shadow-xl overflow-hidden transition-shadow hover:shadow-2xl"
+    >
+      <figure className="overflow-hidden">
         <Image
           src={course.image}
           alt={course.title}
           width={500}
           height={300}
-          className="h-56 w-full object-cover"
+          className="h-56 w-full object-cover transition-transform duration-500 hover:scale-110"
         />
       </figure>
 
@@ -22,17 +27,11 @@ const CourseCard = ({ course }) => {
 
         <p className="text-sm text-gray-600">Instructor: {course.instructor}</p>
 
-        <div className="flex justify-between text-sm text-gray-600">
-          <span>{course.duration}</span>
-          <span>{course.level}</span>
-        </div>
-
-        <div className="flex items-center gap-1 text-yellow-500">
-          <FaStar />
-          <span>{course.rating}</span>
-        </div>
-
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-between items-center">
+          <div className="flex items-center gap-1 text-yellow-500">
+            <FaStar />
+            <span>{course.rating}</span>
+          </div>
           <Link href={`/courses/${course.id}`}>
             <button className="btn bg-purple-600 text-white">
               View Details
@@ -40,7 +39,7 @@ const CourseCard = ({ course }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

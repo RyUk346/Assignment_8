@@ -2,6 +2,7 @@
 
 import CourseCard from "@/components/courses/CourseCard";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
@@ -53,8 +54,15 @@ const CoursesPage = () => {
 
       {filteredCourses.length > 0 ? (
         <div className="grid md:grid-cols-3 gap-8">
-          {filteredCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {filteredCourses.map((course, index) => (
+            <motion.div
+              key={course.id}
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+            >
+              <CourseCard course={course} />
+            </motion.div>
           ))}
         </div>
       ) : (

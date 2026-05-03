@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-white mt-16">
+    <footer className="bg-gray-950 text-white mt-16 p-4 md:p-10">
       <div className="container mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
         <div>
           <h2 className="text-2xl font-bold text-purple-400">SkillSphere</h2>
@@ -31,6 +31,16 @@ const Footer = () => {
             Terms & Conditions | Privacy Policy
           </p>
         </div>
+      </div>
+      <div className="border-t-gray-400/40 border-t">
+        <footer className="footer sm:footer-horizontal footer-center p-4">
+          <aside>
+            <p>
+              Copyright © {new Date().getFullYear()} - All right reserved by
+              SkillSphare
+            </p>
+          </aside>
+        </footer>
       </div>
     </footer>
   );
