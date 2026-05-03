@@ -41,15 +41,17 @@ const HomePage = () => {
 
   return (
     <div>
-      <section className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white">
-        <div className="container mx-auto px-4 py-24 text-center">
+      <section className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white min-h-[85vh] flex items-center justify-center">
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold">
             Upgrade Your Skills Today 🚀
           </h1>
+
           <p className="mt-5 text-lg md:text-xl max-w-2xl mx-auto">
             Learn from industry experts and build career-ready skills in
             development, design, marketing and data.
           </p>
+
           <Link href="/courses">
             <button className="btn btn-warning mt-8">Explore Courses</button>
           </Link>
@@ -57,7 +59,7 @@ const HomePage = () => {
       </section>
 
       <section className="container mx-auto px-4 py-14">
-        <h2 className="text-3xl font-bold mb-8">🔥 Popular Courses</h2>
+        <h2 className="text-3xl font-bold mb-8">Popular Courses</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {popularCourses.map((course) => (
